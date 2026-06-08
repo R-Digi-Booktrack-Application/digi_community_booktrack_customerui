@@ -71,7 +71,7 @@ const Register = () => {
 
       setTimeout(() => {
         if (role === "admin") {
-          window.location.href = "http://admin.softwarestack.xyz/";
+          window.location.href = "http://admin.revsales.xyz/";
         } else {
           navigate("/login");
         }
