@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-frontend
+  namespace: tracking-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-frontend
+  template:
+    metadata:
+      labels:
+        app: customer-frontend
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret   
+      containers:
+        - name: customer
+          image: ghcr.io/softwarestacksolutions/customer-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
